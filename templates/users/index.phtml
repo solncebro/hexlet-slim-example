@@ -1,0 +1,12 @@
+<!-- BEGIN (write your solution here) -->
+<?php foreach ($usersArray as $value): ?>
+
+<div>
+    <a href="/users/<?= $value['id'] ?>"><?= $value['firstName'] ?></a><br>
+</div>
+
+<?php endforeach; ?>
+
+<a href="/users?page=<?= $page <= 2 ? 1 : $page - 1 ?>">Prev</a>
+<a href="/users?page=<?= $page >= $maxPages ? $maxPages : $page + 1 ?>">Next</a>
+<!-- END -->
