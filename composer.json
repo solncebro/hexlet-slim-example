@@ -1,0 +1,12 @@
+{
+    "name": "andreikholkin/hexlet-slim-example",
+    "authors": [
+        {
+            "name": "Andrei Kholkin",
+            "email": "virtual.exe@mail.ru"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0"
+    }
+}
