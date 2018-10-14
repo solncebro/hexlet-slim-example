@@ -1,0 +1,14 @@
+<form action="/courses" method="post">
+  <input type="submit" value="Create Course">
+</form>
+
+<!-- BEGIN (write your solution here) -->
+<?php foreach($flash as $title => $container): ?>
+    <div>
+        <?= $title . ': '; ?>
+        <?php foreach($container as $text): ?>
+            <?= $text; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
+<!-- END -->
