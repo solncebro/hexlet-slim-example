@@ -1,0 +1,28 @@
+<!-- BEGIN (write your solution here) -->
+<form action="/courses" method="post">
+    <div>
+        <label>
+            Title
+            <input type="text" name="course[title]" 
+                value="<?= isset($course['title']) ? htmlspecialchars($course['title']) : ''; ?>">
+        </label>
+    </div>
+    <?php if (isset($errors['title'])) : ?>
+        <div><?= $errors['title']; ?></div>
+    <?php endif; ?>    
+    <div>
+        <label>
+            Paid
+            <select name="course[paid]"
+                value="<?= isset($course['paid']) ? htmlspecialchars($course['paid']) : ''; ?>">
+                <option value="true">Paid</option>
+                <option value="false">Free</option>
+            </select>
+        </label>
+    </div>
+    <?php if (isset($errors['paid'])) : ?>
+        <div><?= $errors['paid']; ?></div>
+    <?php endif; ?>    
+    <input type="submit" value="Create">
+</form>
+<!-- END -->
