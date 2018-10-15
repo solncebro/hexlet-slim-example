@@ -1,0 +1,26 @@
+<!-- BEGIN (write your solution here) -->
+<form action="/posts<?= isset($post['id']) ? "/{$post['id']}" : ''; ?>" method="post">
+    <input type='hidden' name="_METHOD" value="<?= isset($post['id']) ? 'PATCH' : 'POST'; ?>">
+    <div>
+        <label>
+            Name
+            <input type="text" name="post[name]" 
+                value="<?= isset($post['name']) ? htmlspecialchars($post['name']) : ''; ?>">
+        </label>
+    </div>
+    <?php if (isset($errors['name'])) : ?>
+        <div><?= $errors['name']; ?></div>
+    <?php endif; ?>    
+    <div>
+        <label>
+            Body
+            <input type="text" name="post[body]" 
+                value="<?= isset($post['body']) ? htmlspecialchars($post['body']) : ''; ?>">
+        </label>
+    </div>
+    <?php if (isset($errors['body'])) : ?>
+        <div><?= $errors['body']; ?></div>
+    <?php endif; ?>    
+    <input type="submit" value="<?= isset($post['id']) ? 'Save' : 'Create'?>">
+</form>
+<!-- END -->
